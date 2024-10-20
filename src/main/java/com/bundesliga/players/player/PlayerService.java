@@ -2,6 +2,8 @@ package com.bundesliga.players.player;
 
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -55,6 +57,11 @@ public class PlayerService {
                 .filter(player -> club.equals(player.getClub()) && position.equals(player.getPosition()))
                 .collect(Collectors.toList());
     }
+
+    public List<Player> getPlayerByPrice() {
+        return playerRepository.findAll(Sort.by(Sort.Order.desc("price").nullsLast()));
+    }
+
 
     public Player addPlayer(Player player) {
         playerRepository.save(player);

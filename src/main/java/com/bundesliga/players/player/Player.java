@@ -14,55 +14,39 @@ public class Player {
 
     //Every Attribut from table player_data
     @Id
-    @Column(name = "index", unique = true)
+    @Column(name = "index", unique = true)      //Where to find the name in our database
     private Integer index;
 
-    @Column(name = "name")         //Where to find the name in our database
     private String name;
 
-    @Column(name = "full_name")
     private String full_name;
 
-    @Column(name = "age")
     private Integer age;
 
-    @Column(name = "height")
     private Float height;
 
-    @Column(name = "nationality")
     private String nationality;
 
-    @Column(name = "place_of_birth")
     private String place_of_birth;
 
-    @Column(name = "price")
     private Float price;
 
-    @Column(name = "max_price")
     private Float max_price;
 
-    @Column(name = "position")
     private String position;
 
-    @Column(name = "shirt_nr")
     private Integer shirt_nr;
 
-    @Column(name = "foot")
     private String foot;
 
-    @Column(name = "club")
     private String club;
 
-    @Column(name = "contract_expires")
     private String contract_expires;
 
-    @Column(name = "joined_club")
     private String joined_club;
 
-    @Column(name = "player_agent")
     private String player_agent;
 
-    @Column(name = "outiftter")
     private String outfitter;
 
     public Player() {
