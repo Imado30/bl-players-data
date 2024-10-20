@@ -1,0 +1,12 @@
+version: "3.1"
+services:
+  bundesliga-db:
+    image: postgres:latest
+    volumes:
+      - "./data/bundesliga-db:/var/lib/postgresql/data"
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: bundesliga_players
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: imad123

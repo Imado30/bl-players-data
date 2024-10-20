@@ -8,8 +8,12 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 @Component
 public class PlayerService {
+    private static final Logger logger = LoggerFactory.getLogger(PlayerService.class);
     private final PlayerRepository playerRepository;
 
     @Autowired
@@ -18,6 +22,7 @@ public class PlayerService {
     }
 
     public List<Player> getAllPlayers() {
+        logger.info("Fetching all players");
         return playerRepository.findAll();
     }
 
