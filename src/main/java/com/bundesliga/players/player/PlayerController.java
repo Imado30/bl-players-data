@@ -51,6 +51,11 @@ public class PlayerController {
         }
     }
 
+    @GetMapping(path = "/price")
+    public List<Player> getMaxPrice() {
+        return playerService.getPlayerByPrice();
+    }
+
 
     @PostMapping
     public ResponseEntity<Player> addPlayer(@RequestBody Player player) {
