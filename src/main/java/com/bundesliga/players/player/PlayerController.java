@@ -25,7 +25,8 @@ public class PlayerController {
             @RequestParam(required = false) String club,
             @RequestParam(required = false) String name,
             @RequestParam(required = false) String position,
-            @RequestParam(required = false) String nationality) {
+            @RequestParam(required = false) String nationality,
+            @RequestParam(required = false) Integer age) {
         if (club != null && position != null) {
             return playerService.getPlayersByClubAndPosition(club, position);
         }
@@ -60,7 +61,7 @@ public class PlayerController {
     @PostMapping
     public ResponseEntity<Player> addPlayer(@RequestBody Player player) {
         Player createdPlayer = playerService.addPlayer(player);
-        //HTTP-Antwortstatus (201 CREATED) zusammen mit neu erstellten Spielerobjekt als JSON im Body der Antwort zu senden
+        //HTTP-Antwortstatus(201 CREATED), zusammen mit neu erstellten Spielerobjekt als JSON im Body der Antwort zu senden
         return new ResponseEntity<>(createdPlayer, HttpStatus.CREATED);
     }
 

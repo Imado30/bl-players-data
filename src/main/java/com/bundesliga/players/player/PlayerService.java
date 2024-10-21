@@ -40,6 +40,12 @@ public class PlayerService {
                 .collect(Collectors.toList());
     }
 
+    public List<Player> getPlayersByAge(Integer age) {
+        return playerRepository.findAll().stream()
+                .filter(player -> age.equals(player.getAge()))
+                .collect(Collectors.toList());
+    }
+
     public List<Player> getPlayersByPosition(String position) {
         return playerRepository.findAll().stream()
                 .filter(player -> player.getPosition().toLowerCase().contains(position.toLowerCase()))
