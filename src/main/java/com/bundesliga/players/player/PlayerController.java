@@ -47,6 +47,10 @@ public class PlayerController {
             return playerService.getPlayersByNationality(nationality);
         }
 
+        else if (age != null) {
+            return playerService.getPlayersByAge(age);
+        }
+
         else {
             return playerService.getAllPlayers();
         }
