@@ -64,6 +64,12 @@ public class PlayerService {
                 .collect(Collectors.toList());
     }
 
+    public List<Player> getPlayerByNationalityAndPosition(String nationality, String position) {
+        return playerRepository.findAll().stream()
+                .filter(player -> nationality.equals(player.getNationality()) && position.equals(player.getPosition()))
+                .collect(Collectors.toList());
+    }
+
     public List<Player> getPlayerByPrice() {
         return playerRepository.findAll(Sort.by(Sort.Order.desc("price").nullsLast()));
     }
