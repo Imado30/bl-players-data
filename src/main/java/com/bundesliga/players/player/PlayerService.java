@@ -40,6 +40,12 @@ public class PlayerService {
                 .collect(Collectors.toList());
     }
 
+    public List<Player> getPlayerByOutfitter(String outfitter) {
+        return playerRepository.findAll().stream()
+                .filter(player -> player.getOutfitter().toLowerCase().contains(outfitter.toLowerCase()))
+                .collect(Collectors.toList());
+    }
+
     public List<Player> getPlayersByAge(Integer age) {
         return playerRepository.findAll().stream()
                 .filter(player -> age.equals(player.getAge()))
@@ -55,12 +61,6 @@ public class PlayerService {
     public List<Player> getPlayersByNationality(String nationality) {
         return playerRepository.findAll().stream()
                 .filter(player -> player.getNationality().toLowerCase().contains(nationality.toLowerCase()))
-                .collect(Collectors.toList());
-    }
-
-    public List<Player> getPlayerByOutfitter(String outfitter) {
-        return playerRepository.findAll().stream()
-                .filter(player -> player.getOutfitter().toLowerCase().contains(outfitter.toLowerCase()))
                 .collect(Collectors.toList());
     }
 
