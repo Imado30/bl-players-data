@@ -70,7 +70,6 @@ public class PlayerController {
         return playerService.getPlayerByPrice();
     }
 
-
     @PostMapping
     public ResponseEntity<Player> addPlayer(@RequestBody Player player) {
         Player createdPlayer = playerService.addPlayer(player);
@@ -96,5 +95,4 @@ public class PlayerController {
         playerService.deletePlayer(playerName);
         return new ResponseEntity<>("Player deleted Successfully", HttpStatus.OK);
     }
-
 }
