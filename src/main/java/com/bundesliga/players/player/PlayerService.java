@@ -42,7 +42,7 @@ public class PlayerService {
 
     public List<Player> getPlayerByOutfitter(String outfitter) {
         return playerRepository.findAll().stream()
-                .filter(player -> player.getOutfitter().toLowerCase().contains(outfitter.toLowerCase()))
+                .filter(player -> player.getOutfitter() != null && player.getOutfitter().toLowerCase().contains(outfitter.toLowerCase()))
                 .collect(Collectors.toList());
     }
 
