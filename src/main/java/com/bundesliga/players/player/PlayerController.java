@@ -70,6 +70,11 @@ public class PlayerController {
         return playerService.getPlayerByPrice();
     }
 
+    @GetMapping(path = "/height")
+    public List<Player> getPlayerHeight() {
+        return playerService.getPlayerByHeight();
+    }
+
     @PostMapping
     public ResponseEntity<Player> addPlayer(@RequestBody Player player) {
         Player createdPlayer = playerService.addPlayer(player);
