@@ -80,6 +80,10 @@ public class PlayerService {
         return playerRepository.findAll(Sort.by(Sort.Order.desc("price").nullsLast()));
     }
 
+    public List<Player> getPlayerByHeight() {
+        return playerRepository.findAll(Sort.by(Sort.Order.desc("height").nullsLast()));
+    }
+
 
     public Player addPlayer(Player player) {
         playerRepository.save(player);
