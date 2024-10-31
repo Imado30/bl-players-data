@@ -72,7 +72,7 @@ public class PlayerController {
 
     @GetMapping(path = "/height")
     public List<Player> getPlayerHeight() {
-        return playerService.getPlayerByHeight();
+        return playerService.OrderPlayerHeight();
     }
 
     @PostMapping
