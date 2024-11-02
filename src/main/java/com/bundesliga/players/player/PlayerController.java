@@ -26,6 +26,7 @@ public class PlayerController {
             @RequestParam(required = false) String name,
             @RequestParam(required = false) String position,
             @RequestParam(required = false) String nationality,
+            @RequestParam(required = false) String agent,
             @RequestParam(required = false) Integer age,
             @RequestParam(required = false) String outfitter) {
         if (club != null && position != null) {
