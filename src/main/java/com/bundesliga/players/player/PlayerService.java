@@ -64,6 +64,12 @@ public class PlayerService {
                 .collect(Collectors.toList());
     }
 
+    public List<Player> getPlayersByAgent(String agent) {
+        return playerRepository.findAll().stream()
+                .filter(player -> player.getPlayer_agent().toLowerCase().contains(agent.toLowerCase()))
+                .collect(Collectors.toList());
+    }
+
     public List<Player> getPlayersByClubAndPosition(String club, String position) {
         return playerRepository.findAll().stream()
                 .filter(player -> club.equals(player.getClub()) && position.equals(player.getPosition()))
