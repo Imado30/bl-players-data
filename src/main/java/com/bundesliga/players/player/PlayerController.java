@@ -41,6 +41,10 @@ public class PlayerController {
             return playerService.getPlayerByNationalityAndPosition(nationality, position);
         }
 
+        else if (nationality != null && club != null) {
+            return playerService.getPlayersByClubAndNationality(club, nationality);
+        }
+
         else if (agent != null) {
             return playerService.getPlayersByAgent(agent);
         }
