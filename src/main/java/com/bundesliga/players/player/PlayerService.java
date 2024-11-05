@@ -78,7 +78,7 @@ public class PlayerService {
 
     public List<Player> getPlayerByFoot(String foot) {
         return playerRepository.findAll().stream()
-                .filter(player -> player.getFoot().toLowerCase().contains(foot.toLowerCase()))
+                .filter(player -> player.getFoot() != null && player.getFoot().toLowerCase().contains(foot.toLowerCase()))
                 .collect(Collectors.toList());
     }
 
