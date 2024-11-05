@@ -76,6 +76,12 @@ public class PlayerService {
                 .collect(Collectors.toList());
     }
 
+    public List<Player> getPlayerByFoot(String foot) {
+        return playerRepository.findAll().stream()
+                .filter(player -> player.getFoot().toLowerCase().contains(foot.toLowerCase()))
+                .collect(Collectors.toList());
+    }
+
     public List<Player> getPlayersByClubAndNationality(String club, String nationality) {
         return playerRepository.findAll().stream()
                 .filter(player -> club.equals(player.getClub()) && nationality.equals(player.getNationality()))
