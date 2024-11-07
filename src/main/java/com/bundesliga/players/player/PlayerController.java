@@ -27,6 +27,7 @@ public class PlayerController {
             @RequestParam(required = false) String position,
             @RequestParam(required = false) String nationality,
             @RequestParam(required = false) String foot,
+            @RequestParam(required = false) Integer shirtNr,
             @RequestParam(required = false) String agent,
             @RequestParam(required = false) Integer age,
             @RequestParam(required = false) String outfitter) {
