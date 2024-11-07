@@ -39,6 +39,10 @@ public class PlayerController {
             return playerService.getPlayerByOutfitter(outfitter);
         }
 
+        else if (shirtNr != null) {
+            return playerService.getPlayersByShirtNr(shirtNr);
+        }
+
         else if (nationality != null && position != null) {
             return playerService.getPlayerByNationalityAndPosition(nationality, position);
         }
