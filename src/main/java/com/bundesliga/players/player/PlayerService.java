@@ -34,6 +34,12 @@ public class PlayerService {
                 .collect(Collectors.toList());
     }
 
+    public List<Player> getPlayersByShirtNr(Integer shirtNr) {
+        return playerRepository.findAll().stream()
+                .filter(player -> shirtNr.equals(player.getShirt_nr()))
+                .collect(Collectors.toList());
+    }
+
     public List<Player> getPlayersByName(String name) {
         return playerRepository.findAll().stream()
                 .filter(player -> player.getName().toLowerCase().contains(name.toLowerCase()))
