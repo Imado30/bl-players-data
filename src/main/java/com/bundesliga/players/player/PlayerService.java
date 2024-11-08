@@ -108,7 +108,7 @@ public class PlayerService {
         return playerRepository.findAll(Sort.by(Sort.Order.desc("height").nullsLast()));
     }
 
-    public List<Player> OrderPlayerByMaxPrice() {
+    public List<Player> OrderPlayerMaxPrice() {
         return playerRepository.findAll(Sort.by(Sort.Order.desc("max_price").nullsLast()));
     }
 

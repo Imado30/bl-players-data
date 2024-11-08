@@ -94,6 +94,11 @@ public class PlayerController {
         return playerService.OrderPlayerHeight();
     }
 
+    @GetMapping(path = "/max_price")
+    public List<Player> OrderPlayerMaxPrice() {
+        return playerService.OrderPlayerMaxPrice();
+    }
+
     @PostMapping
     public ResponseEntity<Player> addPlayer(@RequestBody Player player) {
         Player createdPlayer = playerService.addPlayer(player);
