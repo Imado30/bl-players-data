@@ -85,7 +85,7 @@ public class PlayerController {
     }
 
     @GetMapping(path = "/price")
-    public List<Player> getMaxPrice() {
+    public List<Player> getPrice() {
         return playerService.getPlayerByPrice();
     }
 
@@ -95,7 +95,7 @@ public class PlayerController {
     }
 
     @GetMapping(path = "/max_price")
-    public List<Player> OrderPlayerMaxPrice() {
+    public List<Player> getMaxPrice() {
         return playerService.OrderPlayerMaxPrice();
     }
 
