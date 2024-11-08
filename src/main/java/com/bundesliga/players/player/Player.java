@@ -4,9 +4,6 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import org.springframework.cglib.core.Local;
-
-import java.time.LocalDate;
 
 @Entity
 @Table(name = "player_data")
@@ -31,7 +28,7 @@ public class Player {
 
     private Float price;
 
-    private Float max_price;
+    private Float maxPrice;
 
     private String position;
 
@@ -60,7 +57,7 @@ public class Player {
                   String nationality,
                   String place_of_birth,
                   Float price,
-                  Float max_price,
+                  Float maxPrice,
                   String position,
                   Integer shirt_nr,
                   String foot,
@@ -77,7 +74,7 @@ public class Player {
         this.nationality = nationality;
         this.place_of_birth = place_of_birth;
         this.price = price;
-        this.max_price = max_price;
+        this.maxPrice = maxPrice;
         this.position = position;
         this.shirt_nr = shirt_nr;
         this.foot = foot;
@@ -153,11 +150,11 @@ public class Player {
     }
 
     public Float getMax_price() {
-        return max_price;
+        return maxPrice;
     }
 
-    public void setMax_price(Float max_price) {
-        this.max_price = max_price;
+    public void setMax_price(Float maxPrice) {
+        this.maxPrice = maxPrice;
     }
 
     public String getPosition() {
